@@ -1,4 +1,8 @@
-<p id="notice">Book was successfully created.</p>
-<P><styong>Title:</styong><%= @book.title %></P>
-<p><styong>Body:</styong><%= @book.body %></p>
-<a><%= link_to "Edit", edit_book_path(@book) %> | <%= link_to "Back", "/books" %></a>
+<% if flash[:notice] %>
+     <p id="notice">
+       <%= flash[:notice] %>
+     </p>
+   <% end %>
+<P><strong>Title:</strong><%= @book.title %></P>
+<p><strong>Body:</strong><%= @book.body %></p>
+<p><%= link_to"Edit", edit_book_path(@book) %> | <%= link_to"Back","/books" %></p>
